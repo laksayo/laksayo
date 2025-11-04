@@ -1,20 +1,18 @@
-title: Laksayo's portfolio and blog
+title: "Laksayo's portfolio and blog"
 author: laksayo
 email: laksayo.feedtheshark@gmail.com
-description: > # this means to ignore newlines until "show_exerpts:"
-  Showcase of art and blog
+description: "Showcase of art and blog"
 
 # Header Links
 homepage: https://laksayo.github.io
 instagram_username: laksayo
-github_username:  laksayo
-
-
-
+github_username: laksayo
 
 # Build settings
-theme: jekyll-theme-portfolio
-
+# Remove theme: or remote_theme: because the theme is local
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Optional: specify where your layouts are if not default
+# You can keep layouts in _layouts inside your theme folder
