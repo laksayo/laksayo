@@ -2,7 +2,7 @@
 layout: post
 title: "Fandom Art Fiesta"
 date: 2025-09-08 12:00:00 +0000
-categories: blog
+categories: [blog]
 tags: [event, boothing]
 author: Laksayo
 image: "/assets/images/my-first-post-image.jpg" # Optional, for a featured image
