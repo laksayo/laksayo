@@ -18,4 +18,15 @@
       </ul>
     </nav>
   </div>
+
+  <!-- Highlight current page in nav -->
+  <script>
+    const currentPath = window.location.pathname.replace(/\/$/, ''); // remove trailing slash
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      const linkPath = new URL(link.href).pathname.replace(/\/$/, '');
+      if (linkPath === currentPath) {
+        link.classList.add('current');
+      }
+    });
+  </script>
 </header>
