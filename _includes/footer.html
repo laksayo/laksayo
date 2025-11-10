@@ -1,71 +1,61 @@
+<footer class="site-footer scheme-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    
+    <!-- Left: Copyright / Author -->
+    <div class="footer-left">
+      {%- if site.author -%}
+        {{ site.author | escape }}
+      {%- else -%}
+        {{ site.description | escape }}
+      {%- endif -%}
+      &copy; {{ "now" | date: "%Y" }}
+    </div>
 
-<div class="py-5 border-top">
-  <div class="container">
-
-
-    <div class="row">
-
-      <div class="col-sm">
-        <ul class="list-unstyled">
-          <li>
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.description | escape }}
-            {%- endif -%}
-          </li>
-          {%- if site.email -%}
+    <!-- Right: Social Media Icons -->
+    <div class="footer-right">
+      {% if site.social %}
+        <ul class="social-icons list-unstyled d-flex gap-3 mb-0">
+          {% for social in site.social %}
             <li>
-              <a href="mailto:{{ site.email }}">
-                {{ site.email }}
+              <a href="{{ social.url }}" target="_blank" rel="noopener">
+                <img src="{{ social.icon }}" alt="{{ social.name }}" height="24" width="24">
               </a>
             </li>
-          {%- endif -%}
+          {% endfor %}
         </ul>
-      </div>
-
-      <div class="col-sm text-right">
-        {% if site.tagline %}<p>{{- site.tagline | escape -}}</p>{% endif %}
-      </div>
-
+      {% endif %}
     </div>
 
   </div>
-</div>
+</footer>
 
-
+<!-- Analytics scripts remain here -->
 {% if site.fathom_key %}
-  <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-  <script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  {% if site.fathom_domain -%}
-  })(document, window, '//{{ site.fathom_domain }}/tracker.js', 'fathom');
-  {%- else -%}
-  })(document, window, '//stats.usefathom.com/tracker.js', 'fathom');
-  {%- endif %}
-  fathom('set', 'siteId', '{{ site.fathom_key }}');
-  fathom('trackPageview');
-  </script>
-  <!-- / Fathom -->
-{%- endif -%}
+<script>
+(function(f,a,t,h,o,m){
+  a[h]=a[h]||function(){(a[h].q=a[h].q||[]).push(arguments)};
+  o=f.createElement('script'),
+  m=f.getElementsByTagName('script')[0];
+  o.async=1; o.src=t; o.id='fathom-script';
+  m.parentNode.insertBefore(o,m)
+{% if site.fathom_domain -%}
+})(document, window, '//{{ site.fathom_domain }}/tracker.js', 'fathom');
+{%- else -%}
+})(document, window, '//stats.usefathom.com/tracker.js', 'fathom');
+{%- endif %}
+fathom('set', 'siteId', '{{ site.fathom_key }}');
+fathom('trackPageview');
+</script>
+{% endif %}
 
 {% if site.google_analytics %}
-  <!-- Google Analytics -->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', {{ site.google_analytics }}, 'auto');
-  ga('send', 'pageview');
-  </script>
-  <!-- End Google Analytics -->
-{%- endif -%}
+ga('create', {{ site.google_analytics }}, 'auto');
+ga('send', 'pageview');
+</script>
+{% endif %}
