@@ -159,3 +159,19 @@ button {
   .main-nav ul {
     flex-direction: column;
     gap:
+
+    body.scheme-1 .site-header {
+  background-color: #EFECEC;
+}
+
+body.scheme-2 .site-header {
+  background-color: #F8F6F6;
+}
+
+body.scheme-3 .site-header {
+  background-color: #716A56;
+}
+
+body.scheme-4 .site-header {
+  background-color: #DF7C6D;
+}
