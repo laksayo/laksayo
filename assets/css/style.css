@@ -289,8 +289,14 @@ body.scheme-4 .site-footer a:hover {
 
 .main-nav a:hover,
 .main-nav a:focus {
-  color: #008060; /* Shopify-style green hover fallback */
+  color: #008060;
+  text-decoration: underline;
   outline: none;
+}
+
+.main-nav a.current {
+  text-decoration: underline;
+  font-weight: 600; /* optional for emphasis */
 }
 
 /* Buttons in header or sections */
