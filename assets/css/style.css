@@ -274,24 +274,30 @@ button.outline:hover {
   gap: 15px; /* spacing between icons */
 }
 
-.footer-right .social-icons {
-  list-style: none;
-  display: flex;
-  gap: 15px; /* ensures even spacing of icons */
-  padding-left: 0;
-  margin: 0;
+/* Social icons styling, independent of left/right placement */
+.social-icons {
+  list-style: none;        /* no bullets */
+  display: flex;           /* horizontal layout */
+  gap: 12px;               /* spacing between icons */
+  padding-left: 0;         /* remove default ul padding */
+  margin: 5px 0;           /* spacing above/below */
 }
 
-.footer-right .social-icons li img {
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons li img {
   display: block;
-  height: 24px;
-  width: 24px;
+  width: 20px;  /* adjust size */
+  height: 20px;
   transition: opacity 0.3s ease;
 }
 
-.footer-right .social-icons li a:hover img {
+.social-icons li a:hover img {
   opacity: 0.7;
 }
+
 
 .site-footer a { color: inherit; text-decoration: none; }
 .site-footer a:hover { color: var(--scheme-2-btn-bg); }
