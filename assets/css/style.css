@@ -57,12 +57,23 @@ body.scheme-1 .main-nav a:hover { color: #2C332F; }
 button.scheme-1 { background-color: #2C332F; color: #FFFFFF; border: none; padding: 10px 20px; cursor: pointer; }
 button.scheme-1.outline { background-color: transparent; color: #505655; border: 1px solid #505655; }
 
+
+/* Header for Scheme 1 */
+body.scheme-1 .site-header {
+  background-color: #EFECEC;
+}
+
 /* Scheme 2 */
 body.scheme-2 { background-color: #F8F6F6; color: #892F21; }
 body.scheme-2 .main-nav a { color: #892F21; }
 body.scheme-2 .main-nav a:hover { color: #DF7C6D; }
 button.scheme-2 { background-color: #DF7C6D; color: #FFFFFF; border: none; padding: 10px 20px; cursor: pointer; }
 button.scheme-2.outline { background-color: transparent; color: #505655; border: 1px solid #505655; }
+
+/* Header for Scheme 2 */
+body.scheme-2 .site-header {
+  background-color: #F8F6F6;
+}
 
 /* Scheme 3 */
 body.scheme-3 { background-color: #716A56; color: #EFECEC; }
@@ -71,12 +82,22 @@ body.scheme-3 .main-nav a:hover { color: #EFECEC; }
 button.scheme-3 { background-color: #EFECEC; color: #716A56; border: none; padding: 10px 20px; cursor: pointer; }
 button.scheme-3.outline { background-color: transparent; color: #EFECEC; border: 1px solid #EFECEC; }
 
+/* Header for Scheme 3 */
+body.scheme-3 .site-header {
+  background-color: #716A56;
+}
+
 /* Scheme 4 */
 body.scheme-4 { background-color: #DF7C6D; color: #EFECEC; }
 body.scheme-4 .main-nav a { color: #EFECEC; }
 body.scheme-4 .main-nav a:hover { color: #2C332F; }
 button.scheme-4 { background-color: #EFECEC; color: #2C332F; border: none; padding: 10px 20px; cursor: pointer; }
 button.scheme-4.outline { background-color: transparent; color: #EFECEC; border: 1px solid #EFECEC; }
+
+/* Header for Scheme 4 */
+body.scheme-4 .site-header { 
+  background-color: #DF7C6D; 
+}
 
 /* ============================= */
 /* Layout Containers & Grid */
@@ -162,18 +183,3 @@ button {
   }
 }
 
-    body.scheme-1 .site-header {
-  background-color: #EFECEC;
-}
-
-body.scheme-2 .site-header {
-  background-color: #F8F6F6;
-}
-
-body.scheme-3 .site-header {
-  background-color: #716A56;
-}
-
-body.scheme-4 .site-header {
-  background-color: #DF7C6D;
-}
