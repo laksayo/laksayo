@@ -1,26 +1,19 @@
 <footer class="site-footer scheme-4">
   <div class="container footer-container">
 
-    <!-- Left: Copyright / Author -->
     <div class="footer-left">
-      &copy; {{ site.time | date: "%Y" }} 
-      {%- if site.author -%}
-        {{ site.author | escape }}
-      {%- else -%}
-        {{ site.footer_message | escape }}
-      {%- endif -%}
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. {{ site.footer_message }}</p>
     </div>
 
-    <!-- Right: Social Icons -->
     <div class="footer-right">
       <ul class="social-icons">
-        {%- for social in site.social -%}
+        {% for item in site.social %}
           <li>
-            <a href="{{ social.url }}" target="_blank" rel="noopener">
-              <img src="{{ social.icon }}" alt="{{ social.name }}" />
+            <a href="{{ item.url }}" target="_blank" aria-label="{{ item.name }}">
+              <img src="{{ item.icon | relative_url }}" alt="{{ item.name }} icon">
             </a>
           </li>
-        {%- endfor -%}
+        {% endfor %}
       </ul>
     </div>
 
