@@ -5,11 +5,7 @@
       <div class="footer-left">
         <p class="footer-author">{{ site.footer.author }}</p>
         <p class="footer-message">{{ site.footer.message }}</p>
-        <p class="footer-copy">&copy; {{ "now" | date: "%Y" }} {{ site.footer.author }}. {{ site.footer.copyright }}</p>
-      </div>
 
-      <!-- Right: Social Icons -->
-      <div class="footer-right">
         <ul class="social-icons">
           {% for social in site.footer.social %}
           <li>
@@ -19,6 +15,13 @@
           </li>
           {% endfor %}
         </ul>
+        
+        <p class="footer-copy">&copy; {{ "now" | date: "%Y" }} {{ site.footer.author }}. {{ site.footer.copyright }}</p>
+      </div>
+
+      <!-- Right: Social Icon has been moved to the left side -->
+      <div class="footer-right">
+        
       </div>
     </div>
   </div>
