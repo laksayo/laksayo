@@ -1,137 +1,186 @@
-/* =============================
-   Color Schemes
-   ============================= */
+/* ============================= */
+/* Color Schemes */
+/* ============================= */
 
 /* Scheme 1 */
-.scheme-1 {
-  --bg-color: #EFECEC;
-  --text-color: #252525;
-  --button-bg: #2C332F;
-  --button-text: #FFFFFF;
-  --button-outline-text: #505655;
-  --shadow-color: #252525;
+body.scheme-1 {
+  background-color: #EFECEC;
+  color: #252525;
+}
+
+body.scheme-1 .main-nav a {
+  color: #252525;
+}
+
+body.scheme-1 .main-nav a:hover {
+  color: #2C332F;
+}
+
+body.scheme-1 .logo-link {
+  color: #252525;
+}
+
+/* Solid button example */
+button.scheme-1 {
+  background-color: #2C332F;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.scheme-1.outline {
+  background-color: transparent;
+  color: #505655;
+  border: 1px solid #505655;
+  padding: 10px 20px;
 }
 
 /* Scheme 2 */
-.scheme-2 {
-  --bg-color: #F8F6F6;
-  --text-color: #892F21;
-  --button-bg: #DF7C6D;
-  --button-text: #FFFFFF;
-  --button-outline-text: #505655;
-  --shadow-color: #252525;
+body.scheme-2 {
+  background-color: #F8F6F6;
+  color: #892F21;
+}
+
+body.scheme-2 .main-nav a {
+  color: #892F21;
+}
+
+body.scheme-2 .main-nav a:hover {
+  color: #DF7C6D;
+}
+
+button.scheme-2 {
+  background-color: #DF7C6D;
+  color: #FFFFFF;
+}
+
+button.scheme-2.outline {
+  background-color: transparent;
+  color: #505655;
+  border: 1px solid #505655;
 }
 
 /* Scheme 3 */
-.scheme-3 {
-  --bg-color: #716A56;
-  --text-color: #EFECEC;
-  --button-bg: #EFECEC;
-  --button-text: #716A56;
-  --button-outline-text: #EFECEC;
-  --shadow-color: #252525;
+body.scheme-3 {
+  background-color: #716A56;
+  color: #EFECEC;
+}
+
+body.scheme-3 .main-nav a {
+  color: #EFECEC;
+}
+
+body.scheme-3 .main-nav a:hover {
+  color: #EFECEC;
+}
+
+button.scheme-3 {
+  background-color: #EFECEC;
+  color: #716A56;
+}
+
+button.scheme-3.outline {
+  background-color: transparent;
+  color: #EFECEC;
+  border: 1px solid #EFECEC;
 }
 
 /* Scheme 4 */
-.scheme-4 {
-  --bg-color: #DF7C6D;
-  --text-color: #EFECEC;
-  --button-bg: #EFECEC;
-  --button-text: #2C332F;
-  --button-outline-text: #EFECEC;
-  --shadow-color: #252525;
+body.scheme-4 {
+  background-color: #DF7C6D;
+  color: #EFECEC;
 }
 
-/* =============================
-   Global Styles
-   ============================= */
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+body.scheme-4 .main-nav a {
+  color: #EFECEC;
 }
 
-/* =============================
-   Header Styles
-   ============================= */
+body.scheme-4 .main-nav a:hover {
+  color: #2C332F;
+}
 
+button.scheme-4 {
+  background-color: #EFECEC;
+  color: #2C332F;
+}
+
+button.scheme-4.outline {
+  background-color: transparent;
+  color: #EFECEC;
+  border: 1px solid #EFECEC;
+}
+
+/* Container to center header content */
+.container {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header styling */
 .site-header {
-  background-color: var(--bg-color);
-  padding: 10px 20px;
-  text-align: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eaeaea;
+  background-color: white;
+  padding: 20px 0;
 }
 
+/* Logo */
 .header-top .logo-link {
   display: inline-block;
-  margin-bottom: 8px;
 }
 
-.logo-image {
-  max-height: 50px;
+.header-top .logo-image {
+  height: 50px; /* adjust size as needed */
   width: auto;
 }
 
+/* Navigation */
 .main-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: inline-flex;
+  display: flex;
   gap: 30px;
-  font-size: 14px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px; /* space below logo */
+  padding-left: 0;
 }
 
-.main-nav ul li a {
-  color: var(--text-color);
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav a {
   text-decoration: none;
+  color: #555;
   font-weight: 500;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-.main-nav ul li a:hover,
-.main-nav ul li a:focus {
-  color: var(--button-bg);
-  text-decoration: underline;
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #008060; /* Shopify-style green hover */
+  outline: none;
 }
 
-/* =============================
-   Buttons
-   ============================= */
+/* Responsive for smaller screens */
+@media (max-width: 720px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
 
-.button-solid {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 2px 2px 5px var(--shadow-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  .site-header {
+    padding: 15px 0;
+  }
+
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
 }
 
-.button-solid:hover {
-  opacity: 0.85;
-}
-
-.button-outline {
-  background-color: transparent;
-  color: var(--button-outline-text);
-  padding: 8px 16px;
-  border: 2px solid var(--button-outline-text);
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 2px 2px 5px var(--shadow-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-outline:hover {
-  background-color: var(--button-outline-text);
-  color: var(--button-bg);
-}
+     
