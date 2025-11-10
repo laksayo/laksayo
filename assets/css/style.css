@@ -30,6 +30,9 @@
   --scheme-4-btn-bg: #EFECEC;
   --scheme-4-btn-text: #2C332F;
   --scheme-4-btn-hover: #DFDFDF;
+
+  /* Heading opacity variable */
+  --heading-opacity: 0.75;
 }
 
 /* ============================= */
@@ -54,9 +57,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Trirong', serif;
+  font-weight: 300; /* default font weight is 400 */
   line-height: 1.3;
   margin-top: 0;
   margin-bottom: 1rem;
+  opacity: var(--heading-opacity);
 }
 
 h1 { font-size: 2.2rem; }
