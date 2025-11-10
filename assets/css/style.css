@@ -206,7 +206,7 @@ button.outline:hover {
   background-color: var(--scheme-4-bg);
   color: var(--scheme-4-text);
   font-family: 'Quattrocento Sans', sans-serif;
-  padding: 40px 0;
+  padding: 100px 0;
 }
 
 .footer-container {
@@ -220,7 +220,7 @@ button.outline:hover {
 .footer-right .social-icons {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 20px;
   padding-left: 0;
   margin: 0;
 }
