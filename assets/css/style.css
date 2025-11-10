@@ -8,11 +8,11 @@
 /* ============================= */
 body {
   font-family: 'Quattrocento Sans', sans-serif;
-  font-size: 16px; /* base font size 100% */
+  font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: #252525;
+  color: #252525; /* fallback text color */
 }
 
 /* Headings */
@@ -24,208 +24,159 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-/* Heading scales (approx 110%) */
 h1 { font-size: 2.2rem; }
 h2 { font-size: 1.9rem; }
 h3 { font-size: 1.5rem; }
 
-/* Paragraphs and links */
-p {
-  margin-bottom: 1rem;
-}
+p { margin-bottom: 1rem; }
 
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-a:hover {
+/* ============================= */
+/* Navigation Menu (fixed color) */
+/* ============================= */
+.main-nav a {
+  color: #892F21;             /* fixed menu color */
+  position: relative;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #DF7C6D;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;                /* thin underline */
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after,
+.main-nav a.current::after {
+  width: 100%;
+}
+
+.main-nav a.current {
+  font-weight: 600;
 }
 
 /* ============================= */
-/* Color Schemes */
+/* Section Color Schemes */
 /* ============================= */
 
 /* Scheme 1 */
-body.scheme-1 {
+.section.scheme-1 {
   background-color: #EFECEC;
   color: #252525;
 }
-body.scheme-1 .main-nav a { color: #252525; }
-body.scheme-1 .main-nav a:hover { color: #2C332F; }
 
-/* Scheme 1 Section Buttons */
-body.scheme-1 .section button {
+/* Scheme 2 */
+.section.scheme-2 {
+  background-color: #F8F6F6;
+  color: #892F21;
+}
+
+/* Scheme 3 */
+.section.scheme-3 {
+  background-color: #716A56;
+  color: #EFECEC;
+}
+
+/* Scheme 4 */
+.section.scheme-4 {
+  background-color: #DF7C6D;
+  color: #EFECEC;
+}
+
+/* ============================= */
+/* Section Buttons */
+/* ============================= */
+
+/* Scheme 1 Buttons */
+.section.scheme-1 button {
   background-color: #2C332F;
   color: #FFFFFF;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
 }
-body.scheme-1 .section button:hover,
-body.scheme-1 .section button:focus {
-  background-color: #252825; /* slightly darker hover */
-}
+.section.scheme-1 button:hover { background-color: #252825; }
 
-/* Outline variant */
-body.scheme-1 .section button.outline {
+.section.scheme-1 button.outline {
   background-color: transparent;
   color: #505655;
   border: 1px solid #505655;
 }
-body.scheme-1 .section button.outline:hover,
-body.scheme-1 .section button.outline:focus {
+.section.scheme-1 button.outline:hover {
   background-color: #505655;
   color: #FFFFFF;
 }
 
-/* Header for Scheme 1 */
-body.scheme-1 .site-header {
-  background-color: #EFECEC;
-}
-
-/* Footer for Scheme 1 */
-body.scheme-1 .site-footer {
-  background-color: #EFECEC;
-  color: #252525;
-}
-body.scheme-1 .site-footer a {
-  color: #252525;
-}
-body.scheme-1 .site-footer a:hover {
-  color: #2C332F;
-}
-
-/* Scheme 2 */
-body.scheme-2 { background-color: #F8F6F6; color: #892F21; }
-body.scheme-2 .main-nav a { color: #892F21; }
-body.scheme-2 .main-nav a:hover { color: #DF7C6D; }
-
-/* Scheme 2 Section Buttons */
-body.scheme-2 .section button {
+/* Scheme 2 Buttons */
+.section.scheme-2 button {
   background-color: #DF7C6D;
   color: #FFFFFF;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
 }
-body.scheme-2 .section button:hover,
-body.scheme-2 .section button:focus {
-  background-color: #C96B5B;
-}
-body.scheme-2 .section button.outline {
+.section.scheme-2 button:hover { background-color: #C96B5B; }
+
+.section.scheme-2 button.outline {
   background-color: transparent;
   color: #892F21;
   border: 1px solid #892F21;
 }
-body.scheme-2 .section button.outline:hover,
-body.scheme-2 .section button.outline:focus {
+.section.scheme-2 button.outline:hover {
   background-color: #892F21;
   color: #FFFFFF;
 }
 
-/* Header for Scheme 2 */
-body.scheme-2 .site-header {
-  background-color: #F8F6F6;
-}
-
-/* Footer for Scheme 2 */
-body.scheme-2 .site-footer {
-  background-color: #F8F6F6;
-  color: #892F21;
-}
-body.scheme-2 .site-footer a {
-  color: #892F21;
-}
-body.scheme-2 .site-footer a:hover {
-  color: #DF7C6D;
-}
-
-/* Scheme 3 */
-body.scheme-3 { background-color: #716A56; color: #EFECEC; }
-body.scheme-3 .main-nav a { color: #EFECEC; }
-body.scheme-3 .main-nav a:hover { color: #EFECEC; }
-
-/* Scheme 3 Section Buttons */
-body.scheme-3 .section button {
+/* Scheme 3 Buttons */
+.section.scheme-3 button {
   background-color: #EFECEC;
   color: #716A56;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
 }
-body.scheme-3 .section button:hover,
-body.scheme-3 .section button:focus {
-  background-color: #E0DDD2;
-}
-body.scheme-3 .section button.outline {
+.section.scheme-3 button:hover { background-color: #E0DDD2; }
+
+.section.scheme-3 button.outline {
   background-color: transparent;
   color: #EFECEC;
   border: 1px solid #EFECEC;
 }
-body.scheme-3 .section button.outline:hover,
-body.scheme-3 .section button.outline:focus {
+.section.scheme-3 button.outline:hover {
   background-color: #EFECEC;
   color: #716A56;
 }
-/* Header for Scheme 3 */
-body.scheme-3 .site-header {
-  background-color: #716A56;
-}
-/* Footer for Scheme 3 */
-body.scheme-3 .site-footer {
-  background-color: #716A56;
-  color: #EFECEC;
-}
-body.scheme-3 .site-footer a {
-  color: #EFECEC;
-}
-body.scheme-3 .site-footer a:hover {
-  color: #DF7C6D; /* optional subtle hover contrast */
-}
 
-/* Scheme 4 */
-body.scheme-4 { background-color: #DF7C6D; color: #EFECEC; }
-body.scheme-4 .main-nav a { color: #EFECEC; }
-body.scheme-4 .main-nav a:hover { color: #2C332F; }
-
-/* Scheme 4 Section Buttons */
-body.scheme-4 .section button {
+/* Scheme 4 Buttons */
+.section.scheme-4 button {
   background-color: #EFECEC;
   color: #2C332F;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
 }
-body.scheme-4 .section button:hover,
-body.scheme-4 .section button:focus {
-  background-color: #DFDFDF;
-}
-body.scheme-4 .section button.outline {
+.section.scheme-4 button:hover { background-color: #DFDFDF; }
+
+.section.scheme-4 button.outline {
   background-color: transparent;
   color: #EFECEC;
   border: 1px solid #EFECEC;
 }
-body.scheme-4 .section button.outline:hover,
-body.scheme-4 .section button.outline:focus {
+.section.scheme-4 button.outline:hover {
   background-color: #EFECEC;
-  color: #2C332F;
-}
-/* Header for Scheme 4 */
-body.scheme-4 .site-header { 
-  background-color: #DF7C6D; 
-}
-
-/* Footer for Scheme 4 */
-body.scheme-4 .site-footer {
-  background-color: #DF7C6D;
-  color: #EFECEC;
-}
-body.scheme-4 .site-footer a {
-  color: #EFECEC;
-}
-body.scheme-4 .site-footer a:hover {
   color: #2C332F;
 }
 
@@ -233,126 +184,37 @@ body.scheme-4 .site-footer a:hover {
 /* Layout Containers & Grid */
 /* ============================= */
 .container {
-  max-width: 1600px; /* Shopify page width */
+  max-width: 1600px;
   width: 90%;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .section {
-  margin: 0; /* no space between sections */
-  padding: 20px 0; /* vertical spacing inside section */
+  margin: 0;
+  padding: 20px 0;
 }
 
 .grid {
   display: grid;
-  gap: 20px 20px; /* vertical | horizontal spacing */
+  gap: 20px;
 }
 
 /* ============================= */
-/* Header Styling */
+/* Header & Footer Styling */
 /* ============================= */
 .site-header {
   border-bottom: 1px solid #eaeaea;
   padding: 20px 0;
 }
 
-.header-top .logo-link {
-  display: inline-block;
-}
+.header-top .logo-link { display: inline-block; }
+.header-top .logo-image { height: 50px; width: auto; }
 
-.header-top .logo-image {
-  height: 50px;
-  width: auto;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 10px;
-  padding-left: 0;
-}
-
-.main-nav li {
-  display: inline-block;
-}
-
-/* Base link styling */
-.main-nav a {
-  position: relative;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-/* Hover/focus underline animation */
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;             /* distance below text */
-  width: 0;
-  height: 2px;
-  background-color: currentColor; /* matches text color */
-  transition: width 0.3s ease;
-}
-
-/* Expand underline on hover/focus */
-.main-nav a:hover::after,
-.main-nav a:focus::after {
-  width: 100%;
-}
-
-/* Current page link: color + underline always visible */
-.main-nav a.current {
-  color: #892F21;           /* Scheme 2 text color */
-  font-weight: 600;
-}
-
-/* Current link underline always visible */
-.main-nav a.current::after {
-  width: 100%;
-  transition: width 0.3s ease, transform 0.3s ease; /* allow hover animation */
-}
-
-/* Optional: animate underline on hover even for current link */
-.main-nav a.current:hover::after {
-  transform: scaleX(1.1);  /* slightly grow underline */
-}
-
-
-/* Buttons in header or sections */
-button {
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* ============================= */
-/* Responsive Styling */
-/* ============================= */
-@media (max-width: 720px) {
-  .main-nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-}
-
-/* ============================= */
-/* Footer Base Styling */
-/* ============================= */
 .site-footer {
   padding: 40px 0;
-  background-color: #252525; /* default dark fallback */
-  color: #EFECEC; /* default text color */
+  background-color: #252525;
+  color: #EFECEC;
   font-family: 'Quattrocento Sans', sans-serif;
 }
 
@@ -363,10 +225,11 @@ button {
 
 .site-footer a:hover,
 .site-footer a:focus {
-  color: #DF7C6D; /* subtle hover color */
+  color: #DF7C6D;
   text-decoration: none;
 }
 
+/* Footer columns */
 .footer-container {
   max-width: 1600px;
   width: 90%;
@@ -377,31 +240,35 @@ button {
   gap: 20px;
 }
 
-.footer-column {
-  flex: 1 1 200px;
-}
-
+.footer-column { flex: 1 1 200px; }
 .footer-column h4 {
   font-family: 'Trirong', serif;
   font-weight: 500;
   margin-bottom: 15px;
 }
-
 .footer-column p,
-.footer-column ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+.footer-column ul { margin: 0; padding: 0; list-style: none; }
+.footer-column ul li { margin-bottom: 10px; }
 
-.footer-column ul li {
-  margin-bottom: 10px;
+/* ============================= */
+/* Buttons Generic Styling */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* ============================= */
-/* Footer Responsive Styling */
-/* ============================= */
+/* Responsive Styling */
 @media (max-width: 720px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
   .footer-container {
     flex-direction: column;
     gap: 20px;
