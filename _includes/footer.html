@@ -1,9 +1,9 @@
 <footer class="site-footer scheme-4">
   <div class="container">
     <div class="footer-content">
+      <!-- Footer author -->
       <p class="footer-author">{{ site.footer.author }}</p>
-      
-      <!-- Social icons -->
+      <!-- Social icons above the message -->
       <ul class="footer-social">
         {% for social in site.footer.social %}
         <li>
@@ -13,10 +13,15 @@
         </li>
         {% endfor %}
       </ul>
-      
+
+      <!-- Footer message -->
       <p class="footer-message">{{ site.footer.message }}</p>
-      <p class="footer-copy">&copy; {{ "now" | date: "%Y" }} {{ site.footer.author }}. {{ site.footer.copyright }}</p>
+
+
     </div>
+
+    <!-- Copyright at bottom -->
+    <p class="footer-copy">&copy; {{ "now" | date: "%Y" }} {{ site.footer.author }}. {{ site.footer.copyright }}</p>
   </div>
 </footer>
 
