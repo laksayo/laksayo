@@ -288,7 +288,7 @@ body.scheme-4 .site-footer a:hover {
 }
 
 /* ============================= */
-/* Navigation Hover & Current Page */
+/* Navigation Hover & Current Page Menu Item (Scheme 2 text color)*/
 /* ============================= */
 
 /* Hover effect */
@@ -298,13 +298,11 @@ body.scheme-4 .site-footer a:hover {
   outline: none;
 }
 
-/* Current page styling */
 .main-nav a.current {
-  text-decoration: underline; /* keep underline for current page */
-  font-weight: 600;           /* optional emphasis */
-  color: #DF7C6D;             /* Scheme 2 color */
+  color: #DF7C6D;       /* Scheme 2 text color */
+  text-decoration: underline;
+  font-weight: 600;
 }
-
 
 /* Buttons in header or sections */
 button {
