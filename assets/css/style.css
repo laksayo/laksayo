@@ -1,98 +1,137 @@
-/* =========================
-   COLOR SCHEMES
-========================= */
+/* =============================
+   Color Schemes
+   ============================= */
 
-/* --- Scheme 1 --- */
+/* Scheme 1 */
 .scheme-1 {
-  background-color: #EFECEC;
-  color: #252525;
+  --bg-color: #EFECEC;
+  --text-color: #252525;
+  --button-bg: #2C332F;
+  --button-text: #FFFFFF;
+  --button-outline-text: #505655;
+  --shadow-color: #252525;
 }
 
-.scheme-1 button.solid {
-  background-color: #2C332F;
-  color: #FFFFFF;
-  border: none;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-.scheme-1 button.outline {
-  background-color: transparent;
-  color: #505655;
-  border: 2px solid #505655;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-/* --- Scheme 2 --- */
+/* Scheme 2 */
 .scheme-2 {
-  background-color: #F8F6F6;
-  color: #892F21;
+  --bg-color: #F8F6F6;
+  --text-color: #892F21;
+  --button-bg: #DF7C6D;
+  --button-text: #FFFFFF;
+  --button-outline-text: #505655;
+  --shadow-color: #252525;
 }
 
-.scheme-2 button.solid {
-  background-color: #DF7C6D;
-  color: #FFFFFF;
-  border: none;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-.scheme-2 button.outline {
-  background-color: transparent;
-  color: #505655;
-  border: 2px solid #505655;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-/* --- Scheme 3 --- */
+/* Scheme 3 */
 .scheme-3 {
-  background-color: #716A56;
-  color: #EFECEC;
+  --bg-color: #716A56;
+  --text-color: #EFECEC;
+  --button-bg: #EFECEC;
+  --button-text: #716A56;
+  --button-outline-text: #EFECEC;
+  --shadow-color: #252525;
 }
 
-.scheme-3 button.solid {
-  background-color: #EFECEC;
-  color: #716A56;
-  border: none;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-.scheme-3 button.outline {
-  background-color: transparent;
-  color: #EFECEC;
-  border: 2px solid #EFECEC;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-/* --- Scheme 4 --- */
+/* Scheme 4 */
 .scheme-4 {
-  background-color: #DF7C6D;
-  color: #EFECEC;
+  --bg-color: #DF7C6D;
+  --text-color: #EFECEC;
+  --button-bg: #EFECEC;
+  --button-text: #2C332F;
+  --button-outline-text: #EFECEC;
+  --shadow-color: #252525;
 }
 
-.scheme-4 button.solid {
-  background-color: #EFECEC;
-  color: #2C332F;
+/* =============================
+   Global Styles
+   ============================= */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================
+   Header Styles
+   ============================= */
+
+.site-header {
+  background-color: var(--bg-color);
+  padding: 10px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-top .logo-link {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.logo-image {
+  max-height: 50px;
+  width: auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 30px;
+  font-size: 14px;
+}
+
+.main-nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  color: var(--button-bg);
+  text-decoration: underline;
+}
+
+/* =============================
+   Buttons
+   ============================= */
+
+.button-solid {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 8px 16px;
   border: none;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-.scheme-4 button.outline {
-  background-color: transparent;
-  color: #EFECEC;
-  border: 2px solid #EFECEC;
-  box-shadow: 2px 2px 4px #252525;
-}
-
-/* =========================
-   BUTTON BASIC STYLES
-========================= */
-button {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  cursor: pointer;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
+.button-solid:hover {
   opacity: 0.85;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: var(--button-outline-text);
+  padding: 8px 16px;
+  border: 2px solid var(--button-outline-text);
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-outline:hover {
+  background-color: var(--button-outline-text);
+  color: var(--button-bg);
 }
