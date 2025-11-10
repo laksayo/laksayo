@@ -1,3 +1,6 @@
+/* ============================= */
+/* Variables / Color Schemes */
+/* ============================= */
 :root {
   /* Scheme 1 */
   --scheme-1-bg: #EFECEC;
@@ -30,7 +33,7 @@
 }
 
 /* ============================= */
-/* Import Fonts */
+/* Fonts */
 /* ============================= */
 @import url('https://fonts.googleapis.com/css2?family=Trirong:wght@400;500;700&family=Quattrocento+Sans:wght@400;500;700&display=swap');
 
@@ -43,13 +46,15 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: var(--scheme-1-text); /* default fallback */
+  color: var(--scheme-1-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Trirong', serif;
   line-height: 1.3;
-  font-weight: 400;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -61,67 +66,16 @@ h3 { font-size: 1.5rem; }
 p { margin-bottom: 1rem; }
 
 /* ============================= */
-/* Menu / Navigation (fixed color) */
-/* ============================= */
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 10px;
-  padding-left: 0;
-}
-
-.main-nav li { display: inline-block; }
-
-.main-nav a {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  color: inherit; /* all links default color */
-  transition: color 0.3s ease;
-}
-
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
-}
-
-.main-nav a:hover::after,
-.main-nav a:focus::after {
-  width: 100%;
-}
-
-.main-nav a.current {
-   color: var(--scheme-2-text); /* current page link */
-  font-weight: 600;
-}
-
-.main-nav a.current::after {
-  width: 100%;
-}
-
-/* ============================= */
-/* Layout Containers & Grid */
+/* Layout Containers */
 /* ============================= */
 .container {
-  max-width: 1600px; 
+  max-width: 1600px;
   width: 90%;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .section {
-  margin: 0;
   padding: 40px 0;
 }
 
@@ -131,7 +85,7 @@ p { margin-bottom: 1rem; }
 }
 
 /* ============================= */
-/* Buttons (general + scheme-driven) */
+/* Buttons */
 /* ============================= */
 button {
   font-family: inherit;
@@ -141,8 +95,8 @@ button {
   border: none;
   cursor: pointer;
   padding: 10px 20px;
-  background-color: var(--btn-bg, #ccc); /* fallback */
-  color: var(--btn-text, #000);         /* fallback */
+  background-color: var(--btn-bg, #ccc);
+  color: var(--btn-text, #000);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -162,7 +116,7 @@ button.outline:hover {
 }
 
 /* ============================= */
-/* Section Color Schemes (variables) */
+/* Section Color Schemes */
 /* ============================= */
 .scheme-1 { --bg: var(--scheme-1-bg); --text: var(--scheme-1-text); --btn-bg: var(--scheme-1-btn-bg); --btn-text: var(--scheme-1-btn-text); --btn-hover: var(--scheme-1-btn-hover); --btn-outline: var(--scheme-1-btn-outline); }
 .scheme-2 { --bg: var(--scheme-2-bg); --text: var(--scheme-2-text); --btn-bg: var(--scheme-2-btn-bg); --btn-text: var(--scheme-2-btn-text); --btn-hover: var(--scheme-2-btn-hover); --btn-outline: var(--scheme-2-text); }
@@ -175,7 +129,7 @@ button.outline:hover {
 }
 
 /* ============================= */
-/* Header & Footer */
+/* Header */
 /* ============================= */
 .site-header {
   display: flex;
@@ -193,97 +147,67 @@ button.outline:hover {
   display: block;
 }
 
-.site-footer.scheme-2 {
-  background-color: var(--scheme-2-bg);
+/* ============================= */
+/* Navigation */
+/* ============================= */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.main-nav li { display: inline-block; }
+
+.main-nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after { width: 100%; }
+
+.main-nav a.current {
   color: var(--scheme-2-text);
+  font-weight: 600;
+}
+
+.main-nav a.current::after { width: 100%; }
+
+/* ============================= */
+/* Site Content Flex for Sticky Footer */
+/* ============================= */
+.site-content { flex: 1; }
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+.site-footer {
   font-family: 'Quattrocento Sans', sans-serif;
   padding: 40px 0;
   border-top: 2px solid var(--scheme-2-btn-bg);
   box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
-}
-
-.site-footer.scheme-4 {
-  background-color: var(--scheme-4-bg);
-  color: var(--scheme-4-text);
-  font-family: 'Quattrocento Sans', sans-serif;
-  padding: 100px 0;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.site-footer .footer-left p {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.site-footer .footer-left p a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dotted currentColor;
-}
-
-.site-footer .footer-left p a:hover {
-  opacity: 1;
-  border-bottom: 1px solid currentColor;
-}
-.footer-right .social-icons {
-  list-style: none;
-  display: flex;
-  gap: 24px; /*bigger spacing*/
-  padding-left: 0;
-  margin: 0;
-}
-
-.footer-right .social-icons li img {
-  display: block;
-  height: 24px;
-  width: 24px;
-  transition: opacity 0.3s ease;
-}
-
-.footer-right .social-icons li a:hover img {
-  opacity: 0.7;
-}
-
-.site-footer a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  color: var(--scheme-4-btn-text);
-}
-
-/* ============================= */
-/* Sticky Footer Setup */
-/* ============================= */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
-
-.site-content { flex: 1; }
-
-/* ============================= */
-/* Footer Styling */
-/* ============================= */
-.site-footer {
   background-color: var(--scheme-2-bg);
   color: var(--scheme-2-text);
-  font-family: 'Quattrocento Sans', sans-serif;
-  padding: 40px 0; /* more vertical padding */
-  border-top: 2px solid var(--scheme-2-btn-bg);
-  box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
 }
 
 .footer-container {
@@ -298,23 +222,23 @@ body {
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .footer-author {
-  font-weight: 700; /* bold */
-  font-size: 1.25rem; /* bigger */
+  font-weight: 700;
+  font-size: 1.25rem;
   margin: 0;
 }
 
 .footer-message {
-  font-size: 0.9rem; /* smaller */
+  font-size: 0.9rem;
   margin: 0;
 }
 
 .footer-copy {
   font-size: 0.85rem;
-  margin-top: 5px;
+  margin-top: 10px;
   color: #555;
 }
 
@@ -327,7 +251,7 @@ body {
 .footer-right .social-icons {
   list-style: none;
   display: flex;
-  gap: 15px; /* spacing between icons */
+  gap: 20px;
   padding-left: 0;
   margin: 0;
 }
@@ -343,17 +267,11 @@ body {
   opacity: 0.7;
 }
 
-.site-footer a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  color: var(--scheme-2-btn-bg);
-}
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer a:hover { color: var(--scheme-2-btn-bg); }
 
 /* ============================= */
-/* Responsive Footer Alignment */
+/* Responsive Footer */
 /* ============================= */
 @media (max-width: 720px) {
   .footer-container {
@@ -367,16 +285,10 @@ body {
   .footer-right {
     width: 100%;
     display: flex;
-    margin-top: 15px;
     justify-content: center;
   }
 
-  .footer-right .social-icons {
-    justify-content: center;
-  }
-
-  .site-footer .footer-left p {
-    text-align: center;
-    margin-bottom: 10px;
-  }
+  .footer-right .social-icons { justify-content: center; }
+  .site-footer .footer-left p { text-align: center; margin-bottom: 10px; }
 }
+
