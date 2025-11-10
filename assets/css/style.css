@@ -132,14 +132,17 @@ button.outline:hover {
 /* Header / Gradient / Layout */
 /* ============================= */
 .site-header {
-  padding: 20px 15px;
+  /* Replace fixed padding with variables */
+  --header-padding-top: 40px;    /* adjust freely */
+  --header-padding-bottom: 30px; /* adjust freely */
+
+  padding: var(--header-padding-top) 15px var(--header-padding-bottom);
   background: linear-gradient(
     180deg,
     rgba(223, 124, 109, 0.1) 0%,  /* top: semi-transparent scheme-4 */
-    var(--scheme-1-bg) 100%        /* bottom: solid scheme-1 */
+    var(--scheme-1-bg) 100%       /* bottom: solid scheme-1 */
   );
 }
-
 /* Header container: flex for left/right alignment */
 .header-container {
   display: flex;
