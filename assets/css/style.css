@@ -210,12 +210,21 @@ button.outline:hover {
   color: var(--scheme-4-text);
 }
 
+.site-footer .container {
+  max-width: 1600px; /* same as main container */
+  width: 90%;        /* responsive width */
+  margin: 0 auto;    /* center */
+  padding: 0 20px;   /* horizontal padding */
+}
+
+
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 10px 0; /* optional: vertical padding inside */
 }
 
 .footer-left {
