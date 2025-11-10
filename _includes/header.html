@@ -1,19 +1,21 @@
 <header class="site-header">
-  <!-- Logo -->
-  <div class="header-top">
-    <a href="{{ site.homepage | relative_url }}" class="logo-link">
-      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="@Laksayo Logo" class="logo-image" />
-    </a>
-  </div>
+  <div class="container">
+    <!-- Logo -->
+    <div class="header-top">
+      <a href="{{ site.homepage | relative_url }}" class="logo-link">
+        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="@Laksayo Logo" class="logo-image" />
+      </a>
+    </div>
 
-  <!-- Navigation -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      <li><a href="https://yourshopifyurl.com" target="_blank" rel="noopener">Laksayo's Store</a></li>
-      <li><a href="{{ '/info/' | relative_url }}">Info</a></li>
-      <li><a href="{{ '/conventions/' | relative_url }}">Con Reservations</a></li>
-      <li><a href="{{ '/rambles/' | relative_url }}">Rambles</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation -->
+    <nav class="main-nav site-nav">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="https://yourshopifyurl.com" target="_blank" rel="noopener">Laksayo's Store</a></li>
+        <li><a href="{{ '/info/' | relative_url }}">Info</a></li>
+        <li><a href="{{ '/conventions/' | relative_url }}">Con Reservations</a></li>
+        <li><a href="{{ '/rambles/' | relative_url }}">Rambles</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
