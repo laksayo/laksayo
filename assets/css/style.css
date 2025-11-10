@@ -186,46 +186,46 @@ button {
 /* ============================= */
 /* Footer Scheme 2 Styling */
 /* ============================= */
-.site-footer {
-  padding: 30px 15px;
-  background-color: #F8F6F6; /* scheme-2 background */
-  color: #892F21;             /* scheme-2 text color */
+.site-footer.scheme-2 {
+  background-color: #F8F6F6;
+  color: #892F21;
   font-family: 'Quattrocento Sans', sans-serif;
+  padding: 40px 0;
+  border-top: 2px solid #DF7C6D;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
 }
 
-/* Footer container: flex two columns */
-.footer-container {
-  max-width: 1600px;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;   /* vertically align copyright & social */
-  flex-wrap: wrap;
-  gap: 20px;
+.site-footer .footer-left {
+  font-size: 0.95rem;
 }
 
-/* Left column: copyright */
-.footer-left {
-  font-size: 0.9rem;
+.site-footer .footer-right .social-icons li {
+  display: inline-block;
 }
 
-/* Right column: social links */
-.footer-right {
-  display: flex;
-  gap: 15px;
+.site-footer .footer-right .social-icons li a img {
+  display: block;
+  height: 24px;
+  width: 24px;
+  transition: opacity 0.3s ease;
 }
 
-.footer-right a {
-  color: #892F21;         /* scheme-2 link color */
-  text-decoration: none;
-  font-size: 1.2rem;      /* icon size if using font-awesome or svg */
-  transition: color 0.3s ease;
+.site-footer .footer-right .social-icons li a:hover img {
+  opacity: 0.7; /* subtle hover effect */
 }
 
-.footer-right a:hover {
-  color: #DF7C6D;         /* subtle hover */
+/* Responsive: stack on small screens */
+@media (max-width: 720px) {
+  .site-footer .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .site-footer .footer-right {
+    text-align: center;
+  }
 }
+
 
 /* Responsive: stack columns on mobile */
 @media (max-width: 720px) {
