@@ -162,23 +162,26 @@ button {
 /* ============================= */
 /* Header & Footer (menu stays fixed) */
 /* ============================= */
-
 .site-header {
-  display: flex;
-  align-items: center; /* vertically centers items */
+  display: flex;                  /* flex container */
   justify-content: space-between; /* logo left, menu right */
-  padding: 20px 0;
+  align-items: center;            /* vertical center */
+  padding: 20px 15px;             /* spacing inside header */
+  border-bottom: 1px solid #eaeaea;
 }
 
+/* Logo */
 .site-header .logo-link {
-  display: block; /* ensures proper sizing */
+  display: block;
+  height: auto;
 }
 
-.main-nav ul {
-  margin-top: 0; /* remove previous top margin */
+.site-header .logo-image {
+  max-height: 50px;  /* fixed max height */
+  width: auto;       /* maintain aspect ratio */
+  height: auto;      /* prevent stretching */
+  display: block;
 }
-
-
 
 .site-footer {
   padding: 40px 0;
