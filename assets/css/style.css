@@ -367,3 +367,14 @@ p {
 
   p { font-size: 0.95rem; line-height: 1.5; }
 }
+
+/* ============================= */
+/* Body content */
+/* ============================= */
+
+/* Wrap all main content */
+.main-content {
+  max-width: 900px;   /* adjust for your preference */
+  margin: 0 auto;     /* centers content */
+  padding: 0 20px;    /* space on left/right */
+}
