@@ -37,7 +37,7 @@
   --scheme-4-btn-text: #2C332F;
   --scheme-4-btn-hover: #DFDFDF;
 
-  --body-opacity: 0.75;
+  --body-opacity: 0.6;
 }
 
 /* ============================= */
@@ -68,7 +68,7 @@ body {
 /* Body Text */
 .main-content {
   font-family: 'Quattrocento Sans', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: rgba(37, 37, 37, var(--body-opacity)); /* opacity control */
   max-width: 900px;
