@@ -2,15 +2,27 @@
 layout: blog
 title: "rambles"
 permalink: /rambles/ # the permalink should match the page path
+body_class: blog-page
 ---
 
-# rambles
-
-<div class="blog-posts">
+<section id="blog-container">
+  <div class="blog-grid">
     {% for post in site.posts %}
-        <article>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt }}</p>
-        </article>
+      <article class="blog-card">
+        <a href="{{ post.url | relative_url }}">
+          {% if post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          {% endif %}
+        </a>
+        <header>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+        </header>
+        <section class="excerpt">
+          {{ post.excerpt }}
+          <p><a href="{{ post.url | relative_url }}">Read more →</a></p>
+        </section>
+      </article>
     {% endfor %}
-</div>
+  </div>
+</section>
