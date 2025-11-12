@@ -516,9 +516,9 @@ body.blog-page .blog-card .excerpt {
   font-size: 0.95rem;
   line-height: 1.4;
   margin: 0;
-  overflow-wrap: break-word;  /* optional: prevent text overflow */
-  word-wrap: break-word;      /* legacy support */
-  hyphens: auto;              /* optional hyphenation */
+  overflow-wrap: normal;  /* don't break words */
+  word-wrap: normal;      /* don't break words */
+  white-space: normal;
   text-align: justify;        /* optional text justification */
   box-sizing: border-box;
   display: -webkit-box;
