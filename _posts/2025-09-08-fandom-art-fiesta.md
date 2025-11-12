@@ -6,11 +6,9 @@ categories: [blog]
 tags: [event, boothing]
 author: Laksayo
 featured image: "/assets/images/rambles/faf-1"
-images:
-  - 
-
-videos:
-  -
+media:
+  - type: image
+    src: "assets/images/rambles/3pimples-originstory.jpg"
 
 permalink: /rambles/fandom-art-fiesta/
 ---
