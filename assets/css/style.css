@@ -520,6 +520,11 @@ body.blog-page .blog-card .excerpt {
   word-wrap: break-word;      /* legacy support */
   hyphens: auto;              /* optional hyphenation */
   text-align: justify;        /* optional text justification */
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
 }
 
 /* Mobile-friendly stacked layout */
