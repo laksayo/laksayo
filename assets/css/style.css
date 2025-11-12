@@ -433,6 +433,10 @@ button.outline:hover {
   margin-bottom: 0.25rem;
 }
 
+.blog-card h2 a {
+  color: var(--color-scheme-1);
+}
+
 .blog-card .excerpt {
   font-size: 1rem;
   line-height: 1.5;
