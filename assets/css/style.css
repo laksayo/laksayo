@@ -431,3 +431,13 @@ button.outline:hover {
   line-height: 1.5;
 }
 
+/* ============================= */
+/* Blog Post Date Styling */
+/* ============================= */
+.post-date {
+  font-size: 0.875rem;        /* smaller body font */
+  text-transform: uppercase;  /* all caps */
+  color: #6c757d;             /* muted text color */
+  margin-bottom: 1.5rem;      /* spacing below the date */
+  display: block;             /* ensures proper spacing if inline by default */
+}
