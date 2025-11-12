@@ -17,16 +17,35 @@ layout: default
       {%- endcomment -%}
     </p>
 
-    {%- if page.featured_image -%}
+{% if page.featured_image %}
     <div class="post-featured-image">
       <img src="{{ page.featured_image }}" alt="{{ page.title | escape }}">
     </div>
-    {%- endif -%}
-
+    {% endif %}
   </header>
 
   <section class="post-content">
     {{ content }}
+
+    {% if page.images %}
+    <div class="post-image-grid">
+      {% for img in page.images %}
+        <img src="{{ img }}" alt="Post image {{ forloop.index }}">
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.videos %}
+    <div class="post-video">
+      {% for vid in page.videos %}
+        <video controls>
+          <source src="{{ vid }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% endfor %}
+    </div>
+    {% endif %}
+
   </section>
 
 </article>
