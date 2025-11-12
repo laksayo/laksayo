@@ -3,13 +3,14 @@ layout: default
 ---
 <article>
 
+  <!-- Header with title and date -->
   <header>
     <h2>{{ page.title | escape }}</h2>
     <p class="post-meta">
-    <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
-      {%- assign date_format = "%B %-d, %Y" -%}  <!-- Full month name -->
-      {{ page.date | date: date_format }}
-    </time> 
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
+        {%- assign date_format = "%B %-d, %Y" -%}  <!-- Full month name -->
+        {{ page.date | date: date_format }}
+      </time>
       {%- comment -%}
       {%- if page.author -%}
         • {{ page.author }}
@@ -17,39 +18,37 @@ layout: default
       {%- endcomment -%}
     </p>
 
-  {% if page.featured_image %}
+    <!-- Featured image if exists -->
+    {% if page.featured_image %}
     <div class="post-featured-image">
       <img src="{{ page.featured_image }}" alt="{{ page.title | escape }}">
     </div>
     {% endif %}
   </header>
 
+  <!-- Main content -->
   <section class="post-content">
     {{ content }}
 
-    {% if page.images or page.videos %}
+    <!-- Media grid (images/videos) -->
+    {% if page.media %}
     <div class="post-media-grid">
-      {% if page.images %}
-        {% for img in page.images %}
-          <img src="{{ img }}" alt="Post image {{ forloop.index }}">
-        {% endfor %}
-      {% endif %}
-
-      {% if page.videos %}
-        {% for vid in page.videos %}
+      {% for item in page.media %}
+        {% if item.type == "image" %}
+          <img src="{{ item.src }}" alt="Post image {{ forloop.index }}">
+        {% elsif item.type == "video" %}
           <video controls>
-            <source src="{{ vid }}" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="{{ item.src }}" type="video/mp4">
           </video>
-        {% endfor %}
-      {% endif %}
+        {% endif %}
+      {% endfor %}
     </div>
     {% endif %}
-
   </section>
 
 </article>
 
+<!-- Video autoplay script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const videos = document.querySelectorAll(".post-media-grid video");
