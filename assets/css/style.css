@@ -534,29 +534,36 @@ body.blog-page .blog-card .card-content {
   gap: 0.25rem;
   flex-grow: 1; /* allows content to expand inside card */
 }
+/* Parent container gets padding */
+body.blog-page .blog-card .excerpt {
+  padding: 1rem;        /* uniform padding around everything */
+  box-sizing: border-box;
+}
 
+/* Excerpt text only handles clamping and spacing, no extra padding */
 body.blog-page .blog-card .excerpt-text {
-  display: -webkit-box; /* for clamp */
+  display: -webkit-box; 
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  overflow:hidden;
+  overflow: hidden;
   font-size: 0.95rem;
   line-height: 1.4;
-  margin: 0;
-  padding: 0.25rem 1rem 0.25rem 1rem;
+  margin: 0;            /* spacing handled by parent padding */
+  padding: 0;           /* remove extra padding */
 }
 
+/* Optional spacing above "Read More" */
 .blog-card .excerpt p {
-  margin: 0.5rem 0 0 0;  /* give a bit of spacing above "Read more" */
+  margin: 0.5rem 0 0 0; 
 }
 
-/* Read more link styling */
+/* Read More link inherits padding from parent */
 body.blog-page .blog-card .read-more {
   display: block;
   box-sizing: border-box;
-  padding: 0.25rem 1rem 0.25rem 1rem; /* match left/right padding */
   margin-top: 0.25rem;
   text-decoration: none;
+  /* No need for extra padding left/right, already handled by parent */
 }
 
 /* Mobile-friendly stacked layout */
