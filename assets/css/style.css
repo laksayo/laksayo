@@ -506,7 +506,7 @@ body.blog-page .blog-card img {
 }
 
 body.blog-page .blog-card header {
-  padding: 0.5rem 1rem 0.25rem;               /* full width below image */
+  padding: 1rem 1rem 0.25rem;               /* full width below image */
   width: 95%;
   display: flex;
   flex-direction: column;
