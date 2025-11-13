@@ -450,7 +450,7 @@ button.outline:hover {
 }
 
 .blog-card h2 a {
-  color: var(--scheme-2-text);
+  color: var(--scheme-1-text);
 }
 
 .blog-card .excerpt {
