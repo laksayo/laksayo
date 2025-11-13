@@ -514,11 +514,6 @@ body.blog-page .blog-card header {
   
 }
 
-body.blog-page .blog-card header p,
-body.blog-page .blog-card .excerpt p {
-  margin: 0;
-}
-
 /* Title + date + excerpt */
 body.blog-page .blog-card h2 {
   font-size: 1.6rem;
@@ -540,7 +535,7 @@ body.blog-page .blog-card .card-content {
   flex-grow: 1; /* allows content to expand inside card */
 }
 
-body.blog-page .blog-card .excerpt-text {
+body.blog-page .blog-card .excerpt {
   display: -webkit-box; /* for clamp */
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
