@@ -20,7 +20,7 @@ body_class: blog-page
         </header>
         <section class="excerpt">
            <div class="excerpt-text">
-            {{ post.excerpt | strip_html | truncatewords: 30 }}
+            {{ post.excerpt | strip_html | truncatewords: 40 }}
           </div>
           <p><a href="{{ post.url | relative_url }}">Read more →</a></p>
         </section>
