@@ -6,7 +6,7 @@ body_class: blog-page
 description: "Just rambles. I go to events, sometimes in costume, sometimes behind a table, sometimes just looking around."
 ---
 <section class="blog-header">
-  <h1 class="blog-title">{{ page.title }}</h1>
+  <h2 class="blog-title">{{ page.title }}</h2>
   {% if page.description %}
     <p class="blog-description">{{ page.description }}</p>
   {% endif %}
